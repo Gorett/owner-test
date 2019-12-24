@@ -20,7 +20,6 @@ export interface CommitInfo {
 
 export interface Commit {
   sha: string;
-  node_id: string;
   commit: CommitInfo;
   url: string;
   html_url: string;

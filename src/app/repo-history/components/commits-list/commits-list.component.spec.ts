@@ -1,4 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { MatListModule } from '@angular/material/list';
 
 import { CommitsListComponent } from './commits-list.component';
 
@@ -8,7 +10,9 @@ describe('CommitsListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CommitsListComponent ]
+      declarations: [CommitsListComponent],
+      imports: [MatListModule],
+      schemas: [ NO_ERRORS_SCHEMA ],
     })
     .compileComponents();
   }));
