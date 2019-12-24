@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 import { Commit } from '../../interfaces';
 import { RepositoryService } from '../../services/repository.service';
@@ -16,7 +17,18 @@ export class RepoViewComponent implements OnInit {
   constructor(private repoHistoryService: RepositoryService) {
   }
 
+  handleError(err) {
+    console.warn(err);
+    // TODO show error message
+  }
+
   ngOnInit() {
-    this.commits = this.repoHistoryService.getCommits();
+    this.commits = this.repoHistoryService.getCommits()
+      .pipe(
+        catchError((err: any) => {
+          this.handleError(err);
+          return of(err);
+        }
+      ));
   }
 }
