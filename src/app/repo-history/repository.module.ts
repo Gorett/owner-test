@@ -8,8 +8,6 @@ import { RepoViewComponent } from './components/repo-view/repo-view.component';
 
 import { RepositoryService } from './services/repository.service';
 
-
-
 @NgModule({
   declarations: [
     CommitsListComponent,
