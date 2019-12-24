@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { REPOSITORY_NAME } from './config';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.less']
 })
 export class AppComponent {
-  title = 'dynasty-owner-test';
+  public title = `${REPOSITORY_NAME} project`;
 }

@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { RepoHistoryService } from './repo-history.service';
+import { RepositoryService } from './repository.service';
 
 describe('RepoHistoryService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: RepoHistoryService = TestBed.get(RepoHistoryService);
+    const service: RepositoryService = TestBed.get(RepositoryService);
     expect(service).toBeTruthy();
   });
 });
