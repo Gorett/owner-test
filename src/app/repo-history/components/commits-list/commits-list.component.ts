@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
-import {Observable} from 'rxjs';
+import { Observable } from 'rxjs';
 
-import {Commit} from '../../interfaces';
+import { Commit } from '../../interfaces';
 
 @Component({
   selector: 'app-commits-list',

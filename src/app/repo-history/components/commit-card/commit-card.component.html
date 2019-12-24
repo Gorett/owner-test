@@ -1,0 +1,16 @@
+<mat-card md-theme="dark-grey" md-theme-watch>
+  <mat-card-title>
+    {{commit?.commit?.message}}
+  </mat-card-title>
+  <mat-card-subtitle>
+    {{commit?.commit?.committer?.name}} committed at {{commit?.commit?.committer?.date | date :'MM/d/yy h:mm a' }}
+  </mat-card-subtitle>
+  <a
+    target="_blank"
+    rel="noopener noreferrer"
+    mat-button
+    [attr.href]="commit?.commit?.url"
+  >
+    {{commit.sha}}
+  </a>
+</mat-card>

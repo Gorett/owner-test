@@ -1,3 +1,7 @@
 <mat-list role="list">
-  <mat-list-item role="listitem" *ngFor="let commit of commits | async">1{{commit.sha}}</mat-list-item>
+  <app-commit-card
+    role="listitem"
+    *ngFor="let commit of commits | async"
+    [commit]="commit"
+  ></app-commit-card>
 </mat-list>
