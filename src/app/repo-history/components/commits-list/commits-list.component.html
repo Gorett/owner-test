@@ -1,7 +1,7 @@
 <mat-list role="list" class="commits-list">
   <app-commit-card
     role="listitem"
-    *ngFor="let commit of commits | async"
-    [commit]="commit"
+    *ngFor="let item of commits | async"
+    [commit]="item"
   ></app-commit-card>
 </mat-list>

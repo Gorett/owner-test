@@ -1,12 +1,25 @@
 import { TestBed, async } from '@angular/core/testing';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterTestingModule } from '@angular/router/testing';
+
 import { AppComponent } from './app.component';
+import { REPOSITORY_NAME } from './config';
+
+const projectTitle = `${REPOSITORY_NAME} project`;
+
+const titleCasedText = text => {
+  return text.toLowerCase()
+    .split(' ')
+    .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+    .join(' ');
+};
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        MatToolbarModule,
+        RouterTestingModule,
       ],
       declarations: [
         AppComponent
@@ -20,16 +33,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'dynasty-owner-test'`, () => {
+  it(`should have correct title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('dynasty-owner-test');
+    expect(app.title).toEqual(projectTitle);
   });
 
-  it('should render title', () => {
+  it('should render title in titlecase', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('dynasty-owner-test app is running!');
+    expect(compiled.querySelector('mat-toolbar').textContent).toContain(titleCasedText(projectTitle));
   });
 });
