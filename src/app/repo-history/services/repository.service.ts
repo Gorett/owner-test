@@ -1,18 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
 
+import { Observable } from 'rxjs';
+
 @Injectable({
   providedIn: 'root'
 })
-export class RepoHistoryService {
+export class RepositoryService {
   private url = 'https://api.github.com/repos/AChuyan/dynasty-owner-test/commits';
-
 
   constructor(private http: HttpClient) {}
 
-  public getHistory() {
-    this.http.get(this.url).subscribe((data: any) => {
-      console.log(data);
-    });
+  public getCommits(): Observable<any> {
+    return this.http.get(this.url);
   }
 }

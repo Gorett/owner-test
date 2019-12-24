@@ -4,7 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { RepoHistoryModule } from './repo-history/repo-history.module';
+import { RepositoryModule } from './repo-history/repository.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
@@ -15,7 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    RepoHistoryModule,
+    RepositoryModule,
     BrowserAnimationsModule,
   ],
   providers: [],
