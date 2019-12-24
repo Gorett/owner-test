@@ -4,4 +4,7 @@
     *ngFor="let item of commits | async"
     [commit]="item"
   ></app-commit-card>
+
+  <p *ngIf="!(commits | async)?.length" class="commits-list-placeholder">No commits found...</p>
 </mat-list>
+
